@@ -208,11 +208,19 @@ require_once __DIR__ . '/seo-engine.php';
                             ]
                         ];
                         
-                        // Load ALL 188 Service Areas from config (Dynamically Updated)
-                        $all_areas_data = require dirname(__DIR__) . '/config/all-areas.php';
-                        $all_areas = array_map(function($area) {
-                            return str_replace(' ', '-', $area['slug']);
-                        }, $all_areas_data);
+                        // Top 10 Major Hyderabad Hubs for Menu (Full 202 areas accessible on pages and sitemaps)
+                        $top_key_areas = [
+                            'Gachibowli' => 'gachibowli',
+                            'Madhapur' => 'madhapur',
+                            'Kukatpally' => 'kukatpally',
+                            'Banjara Hills' => 'banjara-hills',
+                            'Jubilee Hills' => 'jubilee-hills',
+                            'Hitec City' => 'hitec-city',
+                            'Kondapur' => 'kondapur',
+                            'Miyapur' => 'miyapur',
+                            'Secunderabad' => 'secunderabad',
+                            'Dilsukhnagar' => 'dilsukhnagar'
+                        ];
                         
                         foreach ($service_categories as $category => $cat_data):
                         ?>
@@ -224,13 +232,13 @@ require_once __DIR__ . '/seo-engine.php';
                             <ul class="dropdown-level2">
                                 <?php foreach ($cat_data['services'] as $service_name => $service_slug): ?>
                                 <li class="has-areas">
-                                    <a href="javascript:void(0)">
+                                    <a href="<?php echo SITE_URL; ?>/<?php echo $service_slug; ?>">
                                         <?php echo $service_name; ?>
                                         <i class="fas fa-chevron-right arrow-right"></i>
                                     </a>
                                     <ul class="dropdown-level3">
-                                        <?php foreach ($all_areas as $area): ?>
-                                        <li><a href="<?php echo SITE_URL; ?>/<?php echo $service_slug; ?>-in-<?php echo strtolower($area); ?>"><?php echo str_replace('-', ' ', $area); ?></a></li>
+                                        <?php foreach ($top_key_areas as $area_title => $area_slug_part): ?>
+                                        <li><a href="<?php echo SITE_URL; ?>/<?php echo $service_slug; ?>-in-<?php echo $area_slug_part; ?>"><?php echo $area_title; ?></a></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
@@ -347,8 +355,9 @@ require_once __DIR__ . '/seo-engine.php';
                                             <i class="fas fa-chevron-right submenu-icon"></i>
                                         </a>
                                         <ul class="submenu level-3">
-                                            <?php foreach ($all_areas as $area): ?>
-                                                <li><a href="<?php echo SITE_URL; ?>/<?php echo $service_slug; ?>-in-<?php echo strtolower(str_replace(' ', '-', $area)); ?>"><?php echo $area; ?></a></li>
+                                            <li><a href="<?php echo SITE_URL; ?>/<?php echo $service_slug; ?>" style="font-weight:700;color:#10B981;">&rarr; View All Hyderabad</a></li>
+                                            <?php foreach ($top_key_areas as $area_title => $area_slug_part): ?>
+                                                <li><a href="<?php echo SITE_URL; ?>/<?php echo $service_slug; ?>-in-<?php echo $area_slug_part; ?>"><?php echo $area_title; ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </li>
