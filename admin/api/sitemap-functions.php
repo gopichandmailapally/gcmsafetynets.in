@@ -104,6 +104,20 @@ function gcm_generate_sitemap() {
             $blog_rows = [];
         }
     }
+    // Also scan data/blogs JSON files if DB is empty
+    if (empty($blog_rows)) {
+        $b_dir = $root_dir . '/data/blogs';
+        if (is_dir($b_dir)) {
+            foreach (glob($b_dir . '/*.json') as $bf) {
+                $bn = basename($bf);
+                if ($bn === 'index.json' || $bn === 'stats.json') continue;
+                $blog_rows[] = [
+                    'slug' => str_replace('.json', '', $bn),
+                    'created_at' => date('Y-m-d', filemtime($bf))
+                ];
+            }
+        }
+    }
 
     $blog_res = $start_sitemap('sitemap-blogs.xml');
     if ($blog_res) {
