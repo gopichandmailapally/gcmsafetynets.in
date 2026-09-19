@@ -1,4 +1,5 @@
 <?php
+ob_start();
 /**
  * Admin Login Page - Enterprise Security
  */
@@ -93,9 +94,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['admin_username'] = $username;
                 $_SESSION['admin_role']     = $user['role'] ?? 'admin';
                 $security->logSecurityEvent($user['id'], 'login_success', 'Successful login (trusted device)');
-                require_once 'includes/email-notifications.php';
-                sendAdminLoginNotification($username, $_SERVER['REMOTE_ADDR'], $_SERVER['HTTP_USER_AGENT'] ?? '', date('d M Y, h:i:s A'));
+                
+                // Instant redirect to dashboard
                 header('Location: dashboard.php');
+                if (function_exists('fastcgi_finish_request')) {
+                    session_write_close();
+                    fastcgi_finish_request();
+                }
+                
+                try {
+                    require_once 'includes/email-notifications.php';
+                    @sendAdminLoginNotification($username, $_SERVER['REMOTE_ADDR'], $_SERVER['HTTP_USER_AGENT'] ?? '', date('d M Y, h:i:s A'));
+                } catch (\Throwable $e) {}
                 exit;
             } else {
                 // 2FA required — store pending auth, send OTPs, redirect
