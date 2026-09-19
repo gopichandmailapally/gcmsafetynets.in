@@ -6,6 +6,8 @@ if (!defined('GCM_INIT')) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="z3sEDC2o67dDvLFf6Gv8c0oQd9sepeHfXF-rpNw_ZNA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<?php echo $meta_description ?? SITE_DESCRIPTION; ?>">
