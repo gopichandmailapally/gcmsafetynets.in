@@ -1,0 +1,23 @@
+# Logs
+logs/
+*.log
+*.log.*
+data/*.log
+data/*.log.*
+data/pseudo-cron.log*
+
+# Backups & Generated static cache
+generated-pages/
+*.bak
+*.title.bak
+*.layout.bak
+*.old
+
+# Temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+
+# Node modules
+node_modules/
