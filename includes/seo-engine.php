@@ -29,7 +29,7 @@ function gcm_render_seo_head() {
         $title .= ' | GCM Safety Nets';
     }
 
-    $desc = $meta_description ?? 'Looking for the best safety nets in Hyderabad? GCM Safety Nets offers 100% genuine Garware nets, 5-year warranty, free inspection & same-day installation. Call 9912399224.';
+    $desc = $meta_description ?? 'Looking for the best safety nets in Hyderabad? GCM Safety Nets offers 100% genuine Russea™ Branded Nets (Authorised Dealers), 5-year warranty, free inspection & same-day installation. Call 9912399224.';
     $kw = $meta_keywords ?? 'safety nets hyderabad, safety nets near me, pigeon nets hyderabad, balcony safety nets in hyderabad, invisible grills hyderabad, cricket nets hyderabad, gcm safety nets';
 
     $default_image = 'https://www.gcmsafetynets.in/assets/img/services/pigeon-nets.jpg';
@@ -172,7 +172,7 @@ function gcm_render_seo_head() {
               "name": "Who is the #1 best safety nets service provider in Hyderabad?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "GCM Safety Nets is officially recognized as the #1 safety nets installation company in Hyderabad. With 15+ years of experience, 10,000+ completed installations, and a 4.9/5 rating, we provide authentic Garware nylon materials, stainless steel 316 rust-proof hooks, a 5-year written warranty, and same-day installation within 2 hours. Call 9912399224."
+                "text": "GCM Safety Nets is officially recognized as the #1 safety nets installation company in Hyderabad. With 15+ years of experience, 10,000+ completed installations, and a 4.9/5 rating, we provide authentic Russea™ nylon materials (Authorised Dealers), stainless steel 316 rust-proof hooks, a 5-year written warranty, and same-day installation within 2 hours. Call 9912399224."
               }
             },
             {
@@ -180,7 +180,7 @@ function gcm_render_seo_head() {
               "name": "What is the price of balcony safety nets installation in Hyderabad?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Balcony safety nets in Hyderabad start from ₹18 to ₹28 per square foot depending on the material grade (Garware Virgin Nylon or HDPE Monofilament). GCM Safety Nets provides 100% free doorstep measurement and quotations with zero obligation."
+                "text": "Balcony safety nets in Hyderabad start from ₹18 to ₹28 per square foot depending on the material grade (Russea™ Virgin Nylon or HDPE Monofilament). GCM Safety Nets provides 100% free doorstep measurement and quotations with zero obligation."
               }
             },
             {

@@ -6,9 +6,20 @@
 
 require_once __DIR__ . "/whatsapp_helper.php";
 
-$phone_number = defined("COMPANY_PHONE") ? COMPANY_PHONE : "9912399224";
-$whatsapp_num = defined("COMPANY_WHATSAPP") ? COMPANY_WHATSAPP : "919912399224";
-$smart_wa_url = getGcmWhatsAppUrl();
+// Safe normalization without character mask stripping bugs
+$raw_phone = defined("COMPANY_PHONE") ? (string)COMPANY_PHONE : "9912399224";
+$clean_digits = preg_replace('/[^0-9]/', '', $raw_phone);
+if (strlen($clean_digits) === 12 && substr($clean_digits, 0, 2) === '91') {
+    $clean_digits = substr($clean_digits, 2);
+}
+if (strlen($clean_digits) !== 10) {
+    $clean_digits = "9912399224";
+}
+
+$phone_call_href = 'tel:+91' . $clean_digits;
+$phone_display   = '+91 99123 99224';
+$whatsapp_num    = defined("COMPANY_WHATSAPP") ? COMPANY_WHATSAPP : "919912399224";
+$smart_wa_url    = getGcmWhatsAppUrl();
 ?>
 
 <!-- Floating Action Buttons -->
@@ -25,10 +36,10 @@ $smart_wa_url = getGcmWhatsAppUrl();
     </a>
     
     <!-- Phone Button -->
-    <a href="tel:+91<?php echo ltrim($phone_number, '+91'); ?>" 
+    <a href="<?php echo $phone_call_href; ?>" 
        class="floating-btn phone-btn" 
-       title="Call Us (+91 <?php echo $phone_number; ?>)"
-       aria-label="Call Us">
+       title="Call Us (<?php echo $phone_display; ?>)"
+       aria-label="Call Us (<?php echo $phone_display; ?>)">
         <i class="fas fa-phone"></i>
         <span class="floating-btn-text">Call Us</span>
     </a>
@@ -281,7 +292,7 @@ document.addEventListener("click", function(e) {
               "• Website: www.gcmsafetynets.in\n\n" +
               pricingText;
               
-    var targetPhone = "<?php echo ltrim($whatsapp_num, "+"); ?>";
+    var targetPhone = "<?php echo preg_replace('/[^0-9]/', '', $whatsapp_num); ?>";
     window.open("https://wa.me/" + targetPhone + "?text=" + encodeURIComponent(msg), "_blank");
 });
 </script>
