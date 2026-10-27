@@ -1,6 +1,6 @@
 <?php
 /**
- * Smart Dynamic WhatsApp Helper for GCM Safety Nets (Hyderabad)
+ * Smart Dynamic WhatsApp Helper for GCM Safety Nets (Hyderabad / Telangana / AP / India)
  * Generates rich, high-converting WhatsApp inquiry messages tailored to the specific product/service, location, and page.
  * Format matches GCM Enterprises standard:
  * 
@@ -11,6 +11,8 @@
  * • Website: www.gcmsafetynets.in
  * [Pricing/Technical prompt]
  */
+
+require_once __DIR__ . '/geo_resolver.php';
 
 if (!function_exists("getGcmSafetyNetsPageContext")) {
 function getGcmSafetyNetsPageContext($customService = null, $customLocation = null) {
@@ -97,31 +99,23 @@ function getGcmSafetyNetsPageContext($customService = null, $customLocation = nu
         }
     }
 
-    // 2. Detect Hyderabad / Telangana / AP Location
-    $location = $customLocation;
-    if (empty($location) && !empty($area_name)) {
-        $location = $area_name . ", Hyderabad";
-    }
-
+    // 2. Detect Granular Geographic Location
+    $location = !empty($customLocation) ? resolveSmartGeoLocation($customLocation) : "";
     if (empty($location)) {
-        if (preg_match("/-in-([a-z0-9-]+)/", $cleanUri, $m)) {
-            $slug = $m[1];
-            $locFormatted = ucwords(str_replace("-", " ", $slug));
-            $apCities = ["visakhapatnam", "vizag", "vijayawada", "guntur", "nellore", "kurnool", "kadapa", "rajahmundry", "kakinada", "tirupati", "anantapur"];
-            $tgDistricts = ["warangal", "karimnagar", "nizamabad", "khammam", "mahabubnagar", "nalgonda", "sangareddy", "siddipet", "medak"];
-            
-            if (in_array(strtolower($slug), $apCities)) {
-                $location = $locFormatted . ", Andhra Pradesh";
-            } elseif (in_array(strtolower($slug), $tgDistricts)) {
-                $location = $locFormatted . ", Telangana";
-            } else {
-                $location = $locFormatted . ", Hyderabad";
-            }
+        if (!empty($_GET['area'])) {
+            $location = resolveSmartGeoLocation($_GET['area'], 'Hyderabad, Telangana (All Areas & Cyberabad)');
+        } elseif (!empty($area_slug)) {
+            $location = resolveSmartGeoLocation($area_slug, 'Hyderabad, Telangana (All Areas & Cyberabad)');
+        } elseif (!empty($area_name)) {
+            $location = resolveSmartGeoLocation($area_name, 'Hyderabad, Telangana (All Areas & Cyberabad)');
+        } elseif (preg_match("/-in-([a-z0-9-]+)/", $cleanUri, $m)) {
+            $location = resolveSmartGeoLocation($m[1], 'Hyderabad, Telangana (All Areas & Cyberabad)');
         }
     }
 
     if (empty($location)) {
-        $location = "Hyderabad, Telangana (All Areas & Secunderabad)";
+        $checkLoc = strtolower(($page_title ?? "") . " " . $cleanUri . " " . $script);
+        $location = resolveSmartGeoLocation($checkLoc, 'Hyderabad, Telangana (All Areas & Cyberabad)');
     }
 
     // 3. Determine Pricing / Prompt Text
@@ -151,6 +145,12 @@ function getGcmSafetyNetsPageContext($customService = null, $customLocation = nu
         "company"      => "GCM Safety Nets",
         "pricing_text" => $pricingText
     ];
+}
+}
+
+if (!function_exists("getGcmPageContext")) {
+function getGcmPageContext($customService = null, $customLocation = null) {
+    return getGcmSafetyNetsPageContext($customService, $customLocation);
 }
 }
 

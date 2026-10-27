@@ -1,3 +1,4 @@
+<script src="/assets/js/geo_resolver.js"></script>
 <?php
 /**
  * Modern Attractive Footer
@@ -21,6 +22,9 @@ html,body{margin:0!important;padding:0!important;overflow-x:hidden!important;}
 .gcm-main>.gcm-card{background:#fff!important;border-radius:10px!important;box-shadow:0 2px 12px rgba(0,0,0,.06)!important;border:1px solid #e8eef4!important;padding:28px!important;margin-bottom:24px!important;}
 .gcm-main>.gcm-card:last-child{margin-bottom:0!important;}
 .gcm-sidebar .gcm-card{background:#fff!important;border-radius:14px!important;padding:22px!important;box-shadow:0 4px 20px rgba(102,126,234,.12)!important;border:1px solid #e0e7ff!important;margin-bottom:18px!important;}
+.gcm-sidebar .gcm-card.gcm-call-card{background:linear-gradient(135deg,#0f172a,#1e293b)!important;border:1px solid #1e293b!important;color:#fff!important;box-shadow:0 8px 24px rgba(15,23,42,.3)!important;}
+.gcm-sidebar .gcm-card.gcm-call-card h4{color:#fff!important;font-family:"Inter",sans-serif!important;}
+.gcm-sidebar .gcm-card.gcm-call-card p{color:rgba(255,255,255,.9)!important;font-family:"Inter",sans-serif!important;}
 .gcm-content,.gcm-content h2,.gcm-content h3,.gcm-content h4,.gcm-content p,.gcm-content li,.gcm-content strong,.gcm-content em{font-family:'Times New Roman',Times,serif!important;}
 .gcm-sb-title,.gcm-sb-links a,.gcm-highlights li{font-family:'Times New Roman',Times,serif!important;}
 @media(max-width:900px){.gcm-grid{grid-template-columns:1fr!important;padding:0 12px!important;}.gcm-main{order:1!important;}.gcm-sidebar{order:2!important;}}
@@ -78,6 +82,7 @@ html,body{margin:0!important;padding:0!important;overflow-x:hidden!important;}
                 <ul class="footer-links">
                     <li><a href="<?php echo SITE_URL; ?>"><i class="fas fa-chevron-right"></i> Home</a></li>
                     <li><a href="<?php echo SITE_URL; ?>/about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="<?php echo SITE_URL; ?>/all-areas"><i class="fas fa-chevron-right"></i> Service Areas Directory</a></li>
                     <li><a href="<?php echo SITE_URL; ?>/services"><i class="fas fa-chevron-right"></i> Our Services</a></li>
                     <li><a href="<?php echo SITE_URL; ?>/gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
                     <li><a href="<?php echo SITE_URL; ?>/reviews"><i class="fas fa-chevron-right"></i> Customer Reviews</a></li>
@@ -248,7 +253,119 @@ html,body{margin:0!important;padding:0!important;overflow-x:hidden!important;}
         </div>
     </div>
 
-    <!-- Footer Bottom -->
+        <!-- Popular Service Areas in Hyderabad -->
+    <div class="footer-popular-areas" style="background: #0b1329; border-top: 1px solid #1e293b; padding: 35px 0 20px;">
+        <div class="services-container" style="max-width: 1380px; margin: 0 auto; padding: 0 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 18px; gap: 12px;">
+                <div>
+                    <h3 style="font-size: 18px; font-weight: 800; color: #f8fafc; margin: 0 0 4px;">
+                        <i class="fas fa-map-marked-alt text-primary" style="color: #38bdf8;"></i> Popular Hyderabad Service Localities
+                    </h3>
+                    <p style="font-size: 13px; color: #94a3b8; margin: 0;">
+                        Same-day doorstep installation across all Hyderabad & Secunderabad localities
+                    </p>
+                </div>
+                <a href="<?php echo SITE_URL; ?>/all-areas" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 8px 18px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(37,99,235,0.3);">
+                    <i class="fas fa-th-list"></i> View All Localities Directory &rarr;
+                </a>
+            </div>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 15px;">
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-gachibowli" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Gachibowli
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-madhapur" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Madhapur
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-kukatpally" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Kukatpally
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-banjara-hills" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Banjara Hills
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-jubilee-hills" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Jubilee Hills
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-hitec-city" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Hitec City
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-kondapur" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Kondapur
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-miyapur" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Miyapur
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-secunderabad" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Secunderabad
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-dilsukhnagar" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Dilsukhnagar
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-manikonda" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Manikonda
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-ameerpet" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Ameerpet
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-begumpet" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Begumpet
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-kphb-colony" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in KPHB Colony
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-uppal" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Uppal
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-lb-nagar" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in LB Nagar
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-mehdipatnam" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Mehdipatnam
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-attapur" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Attapur
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-tolichowki" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Tolichowki
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-nallagandla" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Nallagandla
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-chandanagar" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Chandanagar
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-hafeezpet" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Hafeezpet
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-nizampet" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Nizampet
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-balanagar" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Balanagar
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-alwal" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Alwal
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-kompally" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Kompally
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-tarnaka" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Tarnaka
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-abids" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Abids
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-himayatnagar" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Himayatnagar
+                </a>
+                <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-somajiguda" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 4px 10px; border-radius: 4px; font-size: 12px; text-decoration: none;">
+                    Safety Nets in Somajiguda
+                </a>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer Bottom -->
     <div class="footer-bottom">
         <div class="footer-container">
             <div class="footer-bottom-content">

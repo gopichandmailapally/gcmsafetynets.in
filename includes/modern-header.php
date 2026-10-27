@@ -251,7 +251,74 @@ require_once __DIR__ . '/seo-engine.php';
                     </ul>
                 </li>
                 
-                <li class="nav-item">
+                                <li class="nav-item has-dropdown">
+                    <a href="<?php echo SITE_URL; ?>/all-areas" class="nav-link <?php echo ($current_page == 'areas') ? 'active' : ''; ?>">
+                        <i class="fas fa-map-marker-alt"></i> Service Areas <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-level1" style="min-width: 280px; padding: 10px 0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                        <li style="padding: 10px 20px; font-weight: 700; color: #1e293b; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #f1f5f9;">
+                            <i class="fas fa-city text-primary"></i> Popular Hyderabad Hubs
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-gachibowli" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Gachibowli
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-madhapur" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Madhapur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-kukatpally" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Kukatpally
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-banjara-hills" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Banjara Hills
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-jubilee-hills" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Jubilee Hills
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-hitec-city" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Hitec City
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-kondapur" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Kondapur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-miyapur" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Miyapur
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-secunderabad" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Secunderabad
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo SITE_URL; ?>/balcony-safety-nets-in-dilsukhnagar" style="padding: 8px 20px; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #334155; text-decoration: none;">
+                                <i class="fas fa-map-pin" style="color: #ef4444; font-size: 11px;"></i> Dilsukhnagar
+                            </a>
+                        </li>
+                        <li style="margin-top: 6px; padding: 10px 16px 6px; border-top: 1px solid #f1f5f9; background: #f8fafc;">
+                            <a href="<?php echo SITE_URL; ?>/all-areas" style="font-weight: 700; color: #2563eb; display: flex; align-items: center; justify-content: space-between; font-size: 13px; text-decoration: none; padding: 8px 12px; background: #eff6ff; border-radius: 8px;">
+                                <span><i class="fas fa-th-list"></i> View All Localities</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+<li class="nav-item">
                     <a href="<?php echo SITE_URL; ?>/estimation" class="nav-link <?php echo ($current_page == 'estimation') ? 'active' : ''; ?>">
                         <i class="fas fa-calculator"></i> Estimation
                     </a>
@@ -336,6 +403,7 @@ require_once __DIR__ . '/seo-engine.php';
         <ul class="mobile-nav-menu">
             <li><a href="<?php echo SITE_URL; ?>"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="<?php echo SITE_URL; ?>/about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="<?php echo SITE_URL; ?>/all-areas"><i class="fas fa-map-marker-alt"></i> All Service Areas</a></li>
             
             <li class="has-submenu">
                 <a href="#" onclick="toggleSubmenu(event, this)">

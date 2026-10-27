@@ -200,6 +200,11 @@ include 'includes/modern-header.php';
                     </div>
                     
                     <!-- Why Choose Us Section -->
+                    <style>
+                    .why-choose-section .feature-item { display: flex !important; align-items: flex-start !important; gap: 16px !important; padding: 14px 26px !important; }
+                    .why-choose-section .feature-icon { width: 38px !important; height: 38px !important; min-width: 38px !important; max-width: 38px !important; flex: 0 0 38px !important; flex-shrink: 0 !important; margin: 2px 0 0 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; border-radius: 10px !important; }
+                    .why-choose-section .feature-content { flex: 1 1 auto !important; min-width: 0 !important; }
+                    </style>
                     <div class="why-choose-section">
                         <div class="choose-card">
                             <h3><i class="fas fa-star"></i> Why Choose GCM Safety Nets?</h3>

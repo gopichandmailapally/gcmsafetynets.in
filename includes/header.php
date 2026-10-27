@@ -85,6 +85,7 @@ if (!defined('GCM_INIT')) {
         ]
     }
     </script>
+<script src="/assets/js/geo_resolver.js"></script>
 </head>
 <body>
     <!-- Top Bar -->
